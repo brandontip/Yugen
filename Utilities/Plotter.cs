@@ -1,4 +1,5 @@
-﻿namespace ConsoleApp1;
+﻿namespace Yugen;
+
 
 using Plotly.NET;
 using Plotly.NET.LayoutObjects;

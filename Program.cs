@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using ConsoleApp1;
-using System.Net.Http.Headers;
+using Yugen;
 
 //  var nums = Enumerable.Range(0, 1500);
 //  var r = new System.Random();
@@ -15,9 +14,11 @@ using System.Net.Http.Headers;
 // Plotter.PlotScatter(xs, ys);
 
 //TweleveDataAPI.t1();
+//
+// AlpacaAPI.ViewAccountTest();
+// AlpacaAPI.PlaceBuyOrderTest();
 
-AlpacaAPI.ViewAccountTest();
-AlpacaAPI.PlaceBuyOrderTest();
-Console.WriteLine("Hello, World!");
 
+
+TweleveDataApi.GetTimeSeries("AAPL",new DateTime(2023, 5, 26), new DateTime(2023, 5, 27), TimeSeries.Interval.Hr1);
 

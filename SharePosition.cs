@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1;
+﻿namespace Yugen;
 
 public class SharePosition
 {

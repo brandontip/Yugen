@@ -1,4 +1,5 @@
-﻿namespace ConsoleApp1;
+﻿namespace Yugen;
+
 
 public class Company
 {

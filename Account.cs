@@ -1,6 +1,7 @@
 ﻿using Alpaca.Markets;
 
-namespace ConsoleApp1;
+namespace Yugen;
+
 
 public class Account
 {
