@@ -7,8 +7,8 @@ public class AlpacaAPI
 {
     //cNydHZknmE57ahulDKpMIOr5XBnwUnYitJ4irWZK
     //PK8P0GBIQ931PWDFNDJD
-    private const String KEY_ID = "PK8P0GBIQ931PWDFNDJD";
-    private const String SECRET_KEY = "cNydHZknmE57ahulDKpMIOr5XBnwUnYitJ4irWZK";
+    private const String KEY_ID = "PKJZEET2CTSUWCXWFM9A";
+    private const String SECRET_KEY = "GfulBTHFAgbRSqf0cijMsWppe2SvGua4nRsvJdqa";
 
     public static void ViewAccountTest()
     {

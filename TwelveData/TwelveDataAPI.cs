@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 //https://twelvedata.com/docs
 //https://twelvedata.com/request-builder
 //https://json2csharp.com/
+
+
+// Limit 800 day 8 per minute
 public class TweleveDataAPI
 {
     public static async void t1()
@@ -31,7 +34,6 @@ public class TweleveDataAPI
 
         }
     }
-    
 
     public static async void t2()
     {
