@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 
 // Limit 800 day
 // Limit 8 per minute
-public class TweleveDataApi
+public class TwelveDataApi
 {
     public static TimeSeries GetTimeSeries(string ticker, DateTime startDate, DateTime endDate, TimeSeries.Interval interval)
     {
-        var isValidCall = IsValidCall(startDate, endDate, interval);
-        if(!isValidCall) throw new Exception("Invalid call to TwelveDataApi.GetTimeSeries");
+        var isValidCall = IsValidTimeConstraints(startDate, endDate, interval);
+        if(!isValidCall) throw new Exception("Invalid time constraints sent to TwelveDataApi.GetTimeSeries");
         var client = new HttpClient();
         var url = StringBuildSeriesUrl(ticker, startDate, endDate, interval);
         var request = GetHttpRequest(url);
@@ -21,16 +21,15 @@ public class TweleveDataApi
         response.Wait();
         var resultAsString = response.Result.Content.ReadAsStringAsync().Result;
         var timeseriesJsonStrings = JsonConvert.DeserializeObject<JSONStringClasses.TimeseriesJSONStrings>(resultAsString);
-        //todo assert status valid
+        if(timeseriesJsonStrings.status != "ok") throw new Exception("TwelveDataApi.GetTimeSeries returned status not ok");
         return new TimeSeries(timeseriesJsonStrings, startDate, endDate, interval);
     }
 
-    private static bool IsValidCall( DateTime startDate, DateTime endDate, TimeSeries.Interval interval)
+    private static bool IsValidTimeConstraints( DateTime startDate, DateTime endDate, TimeSeries.Interval interval)
     {
-        //todo timezone conversion?
-        //todo assert end > start && end - start > interval
+        //todo timezone conversion?return 9startDate-endDate)
         //todo assert market open
-        return true;
+        return startDate < endDate;
     }
 
     private static string StringBuildSeriesUrl(string ticker, DateTime startDate, DateTime endDate, TimeSeries.Interval interval)

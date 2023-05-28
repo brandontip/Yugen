@@ -20,5 +20,5 @@ using Yugen;
 
 
 
-TweleveDataApi.GetTimeSeries("AAPL",new DateTime(2023, 5, 26), new DateTime(2023, 5, 27), TimeSeries.Interval.Hr1);
+TwelveDataApi.GetTimeSeries("AAPL",new DateTime(2023, 5, 26), new DateTime(2023, 5, 27), TimeSeries.Interval.Hr1);
 
