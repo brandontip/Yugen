@@ -7,7 +7,7 @@ public class TimeSeries
     DateTime endDate { get; set; }
     string ticker { get; set; }
     Interval interval { get; set; }
-    List<MarketSnapshot > series { get; set; }
+    public List<MarketSnapshot > series { get; set; }
 
 
     public TimeSeries(JSONStringClasses.TimeseriesJSONStrings data, DateTime startDate, DateTime endDate, Interval interval)
